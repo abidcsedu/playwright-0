@@ -5,7 +5,7 @@ import testdata from "../fixtures/testdata.json";
 test("Login with valid data", async ({ page }) => {
   const loginPage = new LoginPage(page);
 
-  await loginPage.navigate(testdata.validuser.baseurl);
+  await loginPage.navigate(testdata.Url.baseurl);
 
   await loginPage.login(
     testdata.validuser.username,
