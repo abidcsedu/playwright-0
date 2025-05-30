@@ -37,3 +37,5 @@ build/
 # Optional: Playwright binaries (if not managed by package manager)
 .playwright/
 
+
+fixtures/auth/
