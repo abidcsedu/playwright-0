@@ -1,0 +1,10 @@
+{
+  "Url": {
+    "baseurl": "https://nsdev6.na-dev-qa.com/",
+    "homePage": "https://nsdev6.na-dev-qa.com/worldmap"
+  },
+  "validUser": {
+    "username": "abid_admin_new",
+    "password": "QAZwsx@321"
+  }
+}

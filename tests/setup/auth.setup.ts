@@ -1,15 +1,15 @@
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "../../pages/login.page";
-import testdata from "../../fixtures/testdata.json";
+import testData from "../../fixtures/testData.json";
 
 test("Login with valid data", async ({ page }) => {
   const loginPage = new LoginPage(page);
 
-  await loginPage.navigate(testdata.Url.baseurl);
+  await loginPage.navigate(testData.Url.baseurl);
 
   await loginPage.login(
-    testdata.validuser.username,
-    testdata.validuser.password
+    testData.validUser.username,
+    testData.validUser.password
   );
 
   await page.context().storageState({

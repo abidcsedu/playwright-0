@@ -1,9 +1,0 @@
-{
-  "Url": {
-    "baseurl": "https://nsdev6.na-dev-qa.com/accounts/login/"
-  },
-  "validuser": {
-    "username": "abid_admin_new",
-    "password": "QAZwsx@321"
-  }
-}
