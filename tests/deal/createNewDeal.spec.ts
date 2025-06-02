@@ -24,13 +24,9 @@ test.describe("Create a new deal", () => {
     // await page.getByRole("listitem").filter({ hasText: "" }).click();
     // await page.getByRole("listitem").filter({ hasText: "" }).click();
 
-    // for (const rp of testData.dealData.roamingPartner) {
-    //   await page.getByRole("listitem").filter({ hasText: rp }).click();
-    // }
-
-    testData.dealData.roamingPartner.forEach((rp) => {
-      page.getByRole("listitem").filter({ hasText: rp }).click(); // Note: No await here
-    });
+    for (const rp of testData.dealData.roamingPartner) {
+      await page.getByRole("listitem").filter({ hasText: rp }).click();
+    }
 
     await page.getByRole("button", { name: "Confirm" }).click();
     await page.getByRole("button", { name: "Save" }).click();
