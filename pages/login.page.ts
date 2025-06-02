@@ -17,10 +17,8 @@ export class LoginPage extends BasePage {
   }
 
   async login(username: string, password: string) {
-    // await this.username.fill('abid_admin_new');
     await this.username.fill(username);
 
-    // await this.password.fill('QAZwsx@321')
     await this.password.fill(password);
 
     await this.loginButton.click();

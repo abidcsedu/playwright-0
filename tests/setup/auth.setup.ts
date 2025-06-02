@@ -11,7 +11,7 @@ test("Login with valid data", async ({ page }) => {
     testData.validUser.username,
     testData.validUser.password
   );
-   await page.waitForURL(/worldmap/);
+  await page.waitForURL(/worldmap/);
 
   await page.context().storageState({
     path: "fixtures/auth/userAuthState.json",

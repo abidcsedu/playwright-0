@@ -30,7 +30,7 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
-    ignoreHTTPSErrors: true,
+    // ignoreHTTPSErrors: true,
   },
 
   /* Configure projects for major browsers */
@@ -41,7 +41,7 @@ export default defineConfig({
       testMatch: "**/setup/*.setup.ts",
       use: {
         ...devices["Desktop Chrome"],
-        viewport: { width: 1920, height: 1080 },
+        viewport: { width: 1366, height: 768 },
       },
     },
 
@@ -50,7 +50,7 @@ export default defineConfig({
       name: "chromium",
       use: {
         ...devices["Desktop Chrome"],
-        viewport: { width: 1920, height: 1080 },
+        viewport: { width: 1366, height: 768 },
         storageState: "fixtures/auth/userAuthState.json",
       },
       dependencies: ["setup"],

@@ -1,10 +1,18 @@
 {
   "Url": {
     "baseurl": "https://nsdev6.na-dev-qa.com/",
-    "homePage": "https://nsdev6.na-dev-qa.com/worldmap"
+    "homePage": "https://nsdev6.na-dev-qa.com/worldmap/"
   },
   "validUser": {
     "username": "abid_admin_new",
     "password": "QAZwsx@321"
+  },
+  "dealData": {
+    "networks": ["AAZOR", "BELMO"],
+    "roamingPartner": [
+      "ISLMS (IMC Island ehf.)",
+      "ISLPS (Siminn h.f.)",
+      "LUXPT (POST Luxembourg)"
+    ]
   }
 }
