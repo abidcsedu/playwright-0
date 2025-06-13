@@ -1,34 +1,28 @@
 import { test, expect } from "@playwright/test";
 import testData from "../../fixtures/testData.json";
+import { CreateDeal } from "../../pages/createDeal.page";
 
 test.describe("Create a new deal", () => {
   test("select network and rp and create a simple deal", async ({ page }) => {
-    await page.goto(testData.Url.baseurl + "business/deals/");
+    const createDeal = new CreateDeal(page);
 
-    await page.getByRole("link", { name: "Create deal" }).click();
-    await page.getByRole("searchbox", { name: "All" }).click();
+    await createDeal.navigateToDealRepoAndCreateNew(
+      testData.Url.baseurl + "business/deals/"
+    );
+
+    await createDeal.selectNetworks();
 
     for (const network of testData.dealData.networks) {
-      await page.getByRole("option", { name: network }).click();
+      await page.getByRole("option", { name: network });
     }
 
-    // await page.getByRole("option", { name: "AAZOR" }).click();
-    // await page.getByRole("option", { name: "BELMO" }).click();
-
-    await page
-      .locator("div")
-      .filter({ hasText: /^Click to Select$/ })
-      .locator("span")
-      .click();
-
-    // await page.getByRole("listitem").filter({ hasText: "" }).click();
-    // await page.getByRole("listitem").filter({ hasText: "" }).click();
+    await createDeal.selectRPs();
 
     for (const rp of testData.dealData.roamingPartner) {
-      await page.getByRole("listitem").filter({ hasText: rp }).click();
+      await page.getByRole("listitem").filter({ hasText: rp });
     }
+    await createDeal.confirmRPs();
 
-    await page.getByRole("button", { name: "Confirm" }).click();
-    await page.getByRole("button", { name: "Save" }).click();
+    await createDeal.saveDeal();
   });
 });
