@@ -1,4 +1,4 @@
-import { Page, Locator } from "playwright";
+import { Page, Locator } from "@playwright/test";
 import { BasePage } from "./base.page";
 import testData from "../fixtures/testData.json";
 

@@ -13,13 +13,13 @@ test.describe("Create a new deal", () => {
     await createDeal.selectNetworks();
 
     for (const network of testData.dealData.networks) {
-      await page.getByRole("option", { name: network });
+      await page.getByRole("option", { name: network }).click();
     }
 
     await createDeal.selectRPs();
 
     for (const rp of testData.dealData.roamingPartner) {
-      await page.getByRole("listitem").filter({ hasText: rp });
+      await page.getByRole("listitem").filter({ hasText: rp }).click();
     }
     await createDeal.confirmRPs();
 
